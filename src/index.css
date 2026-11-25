@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  :root {
+    font-family: 'DM Sans', sans-serif;
+    color: #183f35;
+    background: #f6f0e4;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+  }
+
+  button,
+  a,
+  select {
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  ::selection {
+    color: #fff;
+    background: #7a2639;
+  }
+}
+
+.font-serif {
+  font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.greek-text {
+  font-variant-ligatures: common-ligatures;
+}
+
+.mode-card.active {
+  color: #173f35;
+}
+
+.mode-card .mode-icon {
+  color: #174c3c;
+  background: #e2e9dd;
+}
+
+.mode-card.mode-gold.active {
+  background: #efd082;
+}
+
+.mode-card.mode-gold.active .mode-icon {
+  color: #57351d;
+  background: rgba(255, 255, 255, 0.54);
+}
+
+.mode-card.mode-burgundy.active {
+  color: #fff8ee;
+  background: #7a2639;
+}
+
+.mode-card.mode-burgundy.active .mode-icon {
+  color: #7a2639;
+  background: #f4d8d1;
+}
+
+.mode-card.mode-green.active {
+  color: #fff;
+  background: #174c3c;
+}
+
+.mode-card.mode-green.active .mode-icon {
+  color: #174c3c;
+  background: #e5eddc;
+}
+
+.flashcard {
+  isolation: isolate;
+}
+
+.flashcard::before {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -75px;
+  bottom: -110px;
+  content: '';
+  border: 34px solid rgba(23, 76, 60, 0.045);
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.flashcard.flipped {
+  background: #f2e2ac;
+}
+
+@media (max-width: 640px) {
+  .flashcard {
+    min-height: 260px;
+  }
+}
